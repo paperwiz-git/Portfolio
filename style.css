@@ -176,6 +176,12 @@ p {
     border-radius: var(--size-border-radius);
 }
 
+.home__contact:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    transition: all var(--animation-duration) ease;
+}
+
 /* Section Common */
 .section {
     padding: 50px;
