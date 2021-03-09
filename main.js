@@ -68,6 +68,14 @@ workBtnContainer.addEventListener('click', (e) => {
     if (filter == null) {
         return;
     }
+
+    //  Remove selection from the previous item and select the new one
+    const active = document.querySelector('.category__btn.selected');
+    active.classList.remove('selected');
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    target.classList.add('selected');
+
+
     projectContainer.classList.add('anim-out');
     setTimeout(() => {
          projects.forEach((project) => {
@@ -86,3 +94,10 @@ function scrollIntoView(selector) {
      const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: "smooth"});
 };
+
+const toggleBtn = document.querySelector('.navbar__toggle-btn');
+const menu = document.querySelector('.navbar__menu');
+
+toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
